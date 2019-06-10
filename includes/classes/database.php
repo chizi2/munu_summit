@@ -1,19 +1,15 @@
 <?php
-/**
- * MySQLi database; only one connection is allowed.
- */
+
+// MySQLi database; only one connection is allowed.
 class database {
     private $_connection;
 
-    // Store the single instance.
+// Store the single instance.
     private static $_instance;
     private static  $_last_query;
 
-
-    /**
-     * Get an instance of the Database.
-     * @return database
-     */
+// Get an instance of the Database.
+// @return database
     public static function getInstance() {
         if (!self::$_instance) {
             self::$_instance = new self();
@@ -21,34 +17,27 @@ class database {
         return self::$_instance;
     }
 
-    /**
-     * Constructor
-     */
+// Constructor
     public function __construct() {
 
-        $this->_connection = new mysqli("localhost", "root", "", 'summit');
+        $this->_connection = new mysqli("127.0.0.1", "root", "", 'summit');
         // Error handling.
         if (mysqli_connect_error()) {
             trigger_error('Failed to connect to the database: ' . mysqli_connect_error(), E_USER_ERROR);
         }
     }
 
-    /**
-     * Empty clone magic method to prevent duplication.
-     */
+// Empty clone magic method to prevent duplication.
     private function __clone() {
 
     }
 
-    /**
-     * Get the mysqli connection.
-     */
+// Get the mysqli connection.
     public function getConnection() {
         return $this->_connection;
     }
 
-
-    //Query Database using current instance
+// Query Database using current instance
     public static function performQuery($sql) {
         $db = database::getInstance();
         $mysqli = $db->getConnection();
@@ -58,7 +47,7 @@ class database {
         return $result;
     }
 
-
+// Prepare data to be inserted
     public static function prepData($data)
     {
         $db = self::getInstance();
@@ -68,6 +57,7 @@ class database {
         return $data;
     }
 
+// Get confirmation that the query was processed
     public static function confirm_query($result) {
         if (!$result) {
             //	echo " Internal server problem.<br />";
@@ -84,7 +74,6 @@ class database {
     }
 
 }
-
 
 //Create new Database object and store it in $db
 $database = database::getInstance();

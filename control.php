@@ -3,9 +3,8 @@
 $title = "2020 International Impact Sourcing Summit";
 $sub = "";
 $content = "Welcome to the 2020 International Impact Sourcing Summit Web.";
-if(!isset($_REQUEST['action'])){$_REQUEST['action']='home';}
-//else{$_REQUEST['action'];}
 
+if(!isset($_REQUEST['action'])){$_REQUEST['action']='home';}
 switch ($_REQUEST['action']) {
 
     // Show front end home page/ Site's Home page
@@ -14,17 +13,16 @@ switch ($_REQUEST['action']) {
         $dashboard->template($title, $sub, $content);
         break;
 
-    case 'register':
+    case 'guest':
         $title= "";
-        $content = register::registerSponsor();
+        $content = buyTicket::saveGuestDetails();
         $dashboard->template($title, $sub, $content);
         break;
 
-    case 'about_summit':
-        // $content = dashboard::homepage();
-        $content=about::about_summit();
+    case 'sponsor':
+        $title= "";
+        $content = about::saveSponsorDetails();
         $dashboard->template($title, $sub, $content);
-        return $content;
         break;
 
 }

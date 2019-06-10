@@ -5,7 +5,7 @@ date_default_timezone_set('Africa/Kampala');
 ini_set('memory_limit','96M');
 
 //Site root & Theme
-define('ROOT',"http://localhost/sumother1");
+define('ROOT',"http://localhost/munu_summit");
 
 //Start Session
 session_start();

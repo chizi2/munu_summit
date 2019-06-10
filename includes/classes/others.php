@@ -1,26 +1,26 @@
 <?php
 
 class others{
-    //  To view all about uganda
-    public static function viewAllAboutUganda(){
-        $content =' <!-- popup start-->
+    //  To view about uganda
+    public static function viewAboutUganda(){
+        $content ='<!-- popup start-->
                       <div id="popup_about" class="container ts-speaker-popup mfp-hide">
                           <div class="row">
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-img">
-                                      <img src="images/speakers/speaker1.jpg" alt="">
+                                      <img src="'.ROOT.'/includes/images/speakers/speaker1.jpg" alt="">
                                   </div>
                               </div><!-- col end-->
 
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-content">
-                                      <h3 class="ts-title">About Uganda</h3>
+                                      <h3 class="ts-title">More About Uganda</h3>
 
-                                      <!--img class="company-logo" src="images/sponsors/sponsor-6.png" alt=""-->
+                                      <!--img class="company-logo" src="'.ROOT.'/includes/images/sponsors/sponsor-6.png" alt=""-->
                                       <p>
                                           Uganda is an African country found in the Eastern part of the continent and it\'s dubbed "he Pearl of Africa" because of the beautiful sights and sceneries
 
-                                          <span class="speaker-designation">Visas and Passes</span>
+                                          <span class="speakder-designation">Visas and Passes</span>
                                       <p> Need a visa to travel to Uganda? Learn more at https://www.immigration.go.ug/content/visas-and-passes</p>
                                       <p>  Apply for a visa at https://visas.immigration.go.ug/</p>
                                       <p> Learn about the visa fees at https://visas.immigration.go.ug/#/help/visa</p>
@@ -34,9 +34,7 @@ class others{
                                       Air Ticket
                                       USD 50 for Uganda tourist Visa.
                                          USD 100 for the tourist East African Visa</p>
-
                                       </p>
-
                                       <div class="ts-speakers-social">
                                           <a href="#"><i class="fa fa-facebook"></i></a>
                                           <a href="#"><i class="fa fa-twitter"></i></a>
@@ -44,30 +42,37 @@ class others{
                                           <a href="#"><i class="fa fa-google-plus"></i></a>
                                           <a href="#"><i class="fa fa-linkedin"></i></a>
                                       </div>
-
                                   </div><!-- ts-speaker-popup-content end-->
-
                               </div><!-- col end-->
                           </div><!-- row end-->
                       </div><!-- popup end-->
 ';
         return $content;
     }
-    //  To view all Tourism
-    public static function viewAllTourism(){
-        $content = ' <!-- popup start-->
+
+    //  To view Tourism
+    public static function viewTourism(){
+        $content = '<!-- popup start-->
                       <div id="popup_tourism" class="container ts-speaker-popup mfp-hide">
                           <div class="row">
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-img">
-                                      <img class="company-logo" src="images/tourism/images (1).jpeg" alt="">
-                                      <!--img src="images/speakers/speaker1.jpg" alt=""-->
+                                      <img class="company-logo" src="'.ROOT.'/includes/images/tourism/images (4).jpg" alt="">
+                                     <img class="company-logo" src="'.ROOT.'/includes/images/tourism/images (3).jpg" alt="">
+                                      <!--img src="'.ROOT.'/includes/images/speakers/speaker1.jpg" alt=""-->
+                                  </div>
+                              </div><!-- col end-->
+                              <div class="col-lg-6">
+                                  <div class="ts-speaker-popup-img">
+                                      <img class="company-logo" src="'.ROOT.'/includes/images/tourism/images(1).jpg" alt="">
+                                     <img class="company-logo" src="'.ROOT.'/includes/images/tourism/images (2).jpg" alt="">
+                                      <!--img src="'.ROOT.'/includes/images/speakers/speaker1.jpg" alt=""-->
                                   </div>
                               </div><!-- col end-->
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-content">
                                       <h3 class="ts-title">Tourism</h3>
-                                      <span class="speaker-designation">Places of attractions in Kampala are:</span>
+                                      <span class="speakder-designation">Places of attractions in Kampala are:</span>
 
                                       <p>
                                       <ul>
@@ -78,7 +83,7 @@ class others{
                                           <li>Gadhafi Mosque, the national mosque in Uganda</li>
                                       </ul>
                                       </p>
-                                      <span class="speaker-designation">Fun facts about Kampala:</span>
+                                      <span class="speakder-designation">Fun facts about Kampala:</span>
                                       <ul>
                                           <li>The Bulange and Lubiri. Bulange is the Buganda Kingdom’s parliament and the Lubiri the King Kabaka’s residence</li>
                                           <li>Kasubi Tombs, which are UNESCO World Heritage</li>
@@ -101,21 +106,22 @@ class others{
                       </div><!-- popup end-->';
         return $content;
     }
+
     //  To view Culture and Entertainment
-    public static function viewAllEntertainment(){
+    public static function viewEntertainment(){
         $content = '<!-- popup start-->
                       <div id="popup_entertainment" class="container ts-speaker-popup mfp-hide">
                           <div class="row">
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-img">
-                                      <img src="images/tourism/rakaraka.jpg" alt="">
-                                      <!--img src="images/speakers/speaker1.jpg" alt=""-->
+                                      <img src="'.ROOT.'/includes/images/tourism/rakaraka.jpg" alt="">
+                                      <!--img src="'.ROOT.'/includes/images/speakers/speaker1.jpg" alt=""-->
                                   </div>
                               </div><!-- col end-->
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-content">
                                       <h3 class="ts-title">Entertainment</h3>
-                                      <span class="speaker-designation">Night Life:</span>
+                                      <span class="speakder-designation">Night Life:</span>
 
                                       <p>
                                           Ugandan culture is made up of a diverse range of ethnic groups which comprises of Bantu-speaking people,
@@ -128,12 +134,12 @@ class others{
                                           the 19th-century missionaries
 
                                       </p>
-                                      <span class="speaker-designation">Language:</span>
+                                      <span class="speakder-designation">Language:</span>
                                       <p>
                                           Being ethnologically diverse country with at least
                                           40 languages in usage,the official languages in Uganda are Swahili and English and Luganda is the most common language spoken.
                                       </p>
-                                      <span class="speaker-designation">Religion:</span>
+                                      <span class="speakder-designation">Religion:</span>
                                       <p>
                                           Uganda is a religious country with almost 85.2 percent of Uganda\'s population subscribing to christianity.
                                       </p>
@@ -148,24 +154,24 @@ class others{
                               </div><!-- col end-->
 
                           </div><!-- row end-->
-                      </div><!-- popup end-->
-
-';
+                      </div><!-- popup end-->';
         return $content;
     }
+
     // To view all culture and food
-    public static function viewAllCulture(){
-        $content = '<div id="popup_culture" class="container ts-speaker-popup mfp-hide">
+    public static function viewCulture(){
+        $content = '<!-- popup start-->
+                      <div id="popup_culture" class="container ts-speaker-popup mfp-hide">
                           <div class="row">
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-img">
-                                      <img src="images/tourism/rakaraka.jpg" alt="">
-                                      <!--img src="images/speakers/speaker1.jpg" alt=""-->
+                                      <img src="'.ROOT.'/includes/images/tourism/rakaraka.jpg" alt="">
+                                      <!--img src="'.ROOT.'/includes/images/speakers/speaker1.jpg" alt=""-->
                                   </div>
                               </div><!-- col end-->
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-content">
-                                      <h3 class="ts-title">Tourism</h3>
+                                      <h3 class="ts-title">Food & Culture</h3>
                                       <span class="speaker-designation">Ethincity:</span>
 
                                       <p>
@@ -199,37 +205,29 @@ class others{
                               </div><!-- col end-->
 
                           </div><!-- row end-->
-                      </div><!-- popup end-->
-
-';
+                      </div><!-- popup end-->';
         return $content;
     }
+
     //  To view all Transportation
-    public static function viewAllTransportation(){
-        $content = ' <!-- popup start-->
+    public static function viewTransportation(){
+        $content = '<!-- popup start-->
                       <div id="popup_transport" class="container ts-speaker-popup mfp-hide">
                           <div class="row">
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-img">
-                                      <img src="images/tourism/rakaraka.jpg" alt="">
-                                      <!--img src="images/speakers/speaker1.jpg" alt=""-->
+                                      <img src="'.ROOT.'/includes/images/tourism/rakaraka.jpg" alt="">
+                                      <!--img src="'.ROOT.'/includes/images/speakers/speaker1.jpg" alt=""-->
                                   </div>
                               </div><!-- col end-->
                               <div class="col-lg-6">
                                   <div class="ts-speaker-popup-content">
-                                      <h3 class="ts-title">Tourism</h3>
-                                      <span class="speaker-designation">Ethincity:</span>
-
+                                      <h3 class="ts-title">Transportation</h3>
                                       <p>
                                           The main means of transport in the Ugandan public transport are small mini bussesalso commonly known as "taxis" to most nationals. These vehicles are approved for 14 people and are low priced. Nationwide they are distinguished by their blue chequered markings.
-
                                           The other commonest means of transport is Boda-boda. These are motor bikes  which are lincensed to carry two passengers and that’s inclusive of the rider. They are popular because there are used to beat the heavy traffic jam on some narrow roads. These boda-boda bikes can be accessed using mobile applications which designed to show the user how much they’re supposed to pay after a journey’s ride.
                                           The other transport option is car hire which also be accessed using phone applications.
-
-
                                       </p>
-
-
                                       <div class="ts-speakers-social">
                                           <a href="#"><i class="fa fa-facebook"></i></a>
                                           <a href="#"><i class="fa fa-twitter"></i></a>
@@ -239,10 +237,8 @@ class others{
                                       </div>
                                   </div><!-- ts-speaker-popup-content end-->
                               </div><!-- col end-->
-
                           </div><!-- row end-->
-                      </div><!-- popup end-->
-';
+                      </div><!-- popup end-->';
         return $content;
     }
 }

@@ -1,15 +1,9 @@
 <?php
 class faqs{
     //    Faqs funt
-    public static function viewAllFaqs(){
-        $content = '<li class="nav-item">                        
-                        <a href="#popup_faq" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">FAQS
-                     </li>
- <!-- ====================================================================== -->
-               <!-- faq -->
- <!-- ====================================================================== -->
-  <!-- popup start-->
-  <div id="popup_faq" class="container ts-speaker-popup mfp-hide">
+    public static function viewFaqs(){
+        $content = '  <!-- popup start-->
+  <div id="popup_faqs" class="container ts-speaker-popup mfp-hide">
       <section class="ts-faq-sec">
          <div class="container">
             <div class="row">
@@ -78,7 +72,7 @@ class faqs{
                               <div class="panel-heading" role="tab" id="headingFour">
                                  <h4 class="panel-title">
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                             4. How can my company sponsor this Event 2020?
+                                             4. How can my company sponsor this Event 2018?
                                           </a>
                                  </h4>
                               </div>
@@ -141,8 +135,7 @@ class faqs{
          </div><!-- .container end -->
       </section><!-- End faq section -->
    
-   </div><!-- popup end-->
-';
+   </div><!-- popup end-->';
         return $content;
     }
 }
