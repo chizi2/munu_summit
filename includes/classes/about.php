@@ -950,6 +950,7 @@ class about{
         $content ='';
         return $content;
     }
+
     // To view all sponsors
     public  static  function viewAllSponsors(){
         $content = ' <div id="popup_sponsors" class="container ts-speaker-popup mfp-hide">
@@ -1064,35 +1065,65 @@ class about{
         return $content;
     }
 
+    // To get sponsors categories
+    public static function sponsorCategory($name)
+    {
+            $content='<div class="col-lg-4">
+                        <div class="pricing-item ">
+                           <img class="pricing-dot " src="'.ROOT.'/includes/images/pricing/dot.png" alt="">
+                           <div class="ts-pricing-box">
+      
+                              <div class="ts-pricing-header">
+                                 <h2 class="ts-pricing-name">'.$name.'</h2>
+                                 <h3 class="ts-pricing-price">
+                                    <span class="currency">$</span>219
+                                 </h3>
+                              </div>
+                              <div class="ts-pricing-progress">
+                                 <p class="amount-progres-text">Available tickets for this price</p>
+                                 <div class="ts-progress">
+                                    <div class="ts-progress-inner" style="width: 100%"></div>
+                                 </div>
+                                 <p class="ts-pricing-value">500/500</p>
+                              </div>
+                              <div class="promotional-code">
+                                 <!-- <p class="promo-code-text">Enter Promotional Code</p> -->
+                                 <!-- <a href="#" class="btn pricing-btn">Buy Ticket</a> -->
+                                 <a name="id" href="#popup_sponsor_'.$name.'" class="view-speaker ts-image-popup btn pricing-btn" data-effect="mfp-zoom-in">Become A Sponsor</a>
+                                 <p class="vate-text">All prices exclude 25% VAT</p>
+                              </div>
+                           </div><!-- ts pricing box-->
+                           <img class="pricing-dot1 " src="'.ROOT.'/includes/images/pricing/dot.png" alt="">
+                        </div>
+                     </div><!-- col end-->';
+            return $content;
+
+    }
+
     // To become a sponsor
-    public static function becomeSponsor(){
-        $content ='
-                <!-- popup start--><div id="popup_become_sponsor" class="container ts-speaker-popup mfp-hide">
+    public static function becomeSponsor($name)
+    {        switch ($name) {
+        case 'silver':
+            $cat= '<option value="1">SILVER</option>';
+            break;
+        case 'gold':
+            $cat= '<option value="2">GOLD</option>';
+            break;
+        case 'platinum':
+            $cat= '<option value="3">PLATINUM</option>';
+            break;
+    }
+        $content = '<!-- popup start-->
+                <div id="popup_sponsor_'.$name.'" class="container ts-speaker-popup mfp-hide">
                      <div class="col-lg-4 offset-lg-1">
                         <div class="hero-form-content">
                            <h2>Register</h2>
                            <p>Welcome, Register Now To Become A Sponsor For Our Summit:</p>
-                           <form action="#" method="POST" class="hero-form">
+                           <form action="?action=sponsor" method="POST" class="hero-form">
                               <input class="form-control form-control-name" placeholder="Name" name="name" id="name" type="text" required="">
                               <input class="form-control form-control-phone" placeholder="Phone" name="phone" id="phone" type="number">
                               <input class="form-control form-control-email" placeholder="Email" name="email" id="email" type="email" required="">
-      
-                              <select name="ticket" id="ticket">
-                                 ';
-//        $_REQUEST['id']='regular';
-//        switch ($_REQUEST['id']){
-//            case 'gold':
-//                echo '<option value="3">GOLD</option>' ;
-//                break;
-//            case 'platinum':
-//                echo '<option value="2">PLATINUM</option>' ;
-//                break;
-//            case 'regular':
-//                echo '<option value="1">REGULAR</option>' ;
-//                break;
-//        }
-        echo '
-                              </select>
+                              <select name="ticket" id="ticket">'.$cat.'</select>
                               <button class="btn" type="submit"> Register Now</button>
                            </form>
                         </div>
@@ -1101,184 +1132,218 @@ class about{
 ';
         return $content;
     }
-//    ====================================================================================================
 
-    // To view all host
-    public static function viewAllHost(){
+    //To save sponsor details
+    public static function saveSponsorDetails(){
+        $company= database::prepData($_POST['name']);
+        $phone= database::prepData($_POST['phone']);
+        $email = database::prepData($_POST['email']);
+        $category = database::prepData($_POST['ticket']);
+        $status = 1;
+        $result = database::performQuery("INSERT INTO sponsor(company, phone_number, email, payment_status_id,sponsor_category_id) VALUES ('$company','$phone','$email',$status,$category)");
+    }
+
+    // To view the host
+    public static function viewHost(){
         $content = '<!-- popup start-->
-<div id="popup_host" class="container ts-speaker-popup mfp-hide">
- <!-- <a class="navbar-brand" href="index-5.html">
-                  <img src="images/logos/logo-v2.png" alt="">
-               </a> -->
-      
-     <div class="row">
-                        <div class="col-lg-6">
-                           <div class="ts-speaker-popup-img">
-                              <img src="images/speakers/work3.jpg" alt="">
-                           </div>
-                        </div><!-- col end-->
-                        <div class="col-lg-6">
-                           <div class="ts-speaker-popup-content">
-                              <!-- <span class="speakder-designation">Cheif Architecture</span> -->
-                              <img class="company-logo" src="images/sponsors/logo.svg" alt="">
-                               <h3 class="ts-title">Our Services </h3>
-
-                              <p>
-                                 It is amazing how much we can accomplish when we work together.
-                                    Your values become our values; your goals become our goals.
-                                    With Munu you get a business partner who enables you do what you do better. 
-                                    We do the rest for more Information visit:<a target="blank" href=" http://www.munutech.com/services.aspx">Our Services</a>
-.
-                              </p>
-                              <div class="ts-speakers-social">
-                                 <a href="#"><i class="fa fa-facebook"></i></a>
-                                 <a href="#"><i class="fa fa-twitter"></i></a>
-                                 <a href="#"><i class="fa fa-instagram"></i></a>
-                                 <a href="#"><i class="fa fa-google-plus"></i></a>
-                                 <a href="#"><i class="fa fa-linkedin"></i></a>
-                              </div>
-                           </div><!-- ts-speaker-popup-content end-->
-                        </div><!-- col end-->
-                     </div>  
-      <!-- End faq section --><!-- row end-->
-   </div>
-   <!-- popup end-->';
+        <div id="popup_host" class="container ts-speaker-popup mfp-hide">
+         <!-- <a class="navbar-brand" href="index-5.html">
+                          <img src="'.ROOT.'/includes/images/logos/logo-v2.png" alt="">
+                       </a> -->
+              
+             <div class="row">
+                                <div class="col-lg-6">
+                                   <div class="ts-speaker-popup-img">
+                                      <img src="'.ROOT.'/includes/images/speakers/work3.jpg" alt="">
+                                   </div>
+                                </div><!-- col end-->
+                                <div class="col-lg-6">
+                                   <div class="ts-speaker-popup-content">
+                                      <h3 class="ts-title">MUNU TECHNOLOGIES</h3>
+                                      <!-- <span class="speakder-designation">Cheif Architecture</span> -->
+                                      <img class="company-logo" src="'.ROOT.'/includes/images/sponsors/logo-v2.png" alt="">
+                                      <p>
+                                         World is committed to making participation in the event a harass ment free experience
+                                         for everyone, regardless of level experience gender, gender identity and expression
+                                      </p>
+                                      <h4 class="session-name">
+                                         Sessions by David
+                                      </h4>
+                                      <div class="row">
+                                         <div class="col-lg-6">
+                                            <div class="speaker-session-info">
+                                               <h4>Day 1</h4>
+                                               <span>
+                                                                 10.30 - 11.30 am
+                                                           </span>
+                                               <p>
+                                                  Marketing Matters
+                                               </p>
+                                            </div>
+                                         </div>
+                                         <div class="col-lg-6">
+                                            <div class="speaker-session-info">
+                                               <h4>Day 1</h4>
+                                               <span>
+                                                                    10.30 - 11.30 am
+                                                              </span>
+                                               <p>
+                                                  Marketing Matters
+                                               </p>
+                                            </div>
+                                         </div>
+                                      </div>
+                                      <div class="ts-speakers-social">
+                                         <a href="#"><i class="fa fa-facebook"></i></a>
+                                         <a href="#"><i class="fa fa-twitter"></i></a>
+                                         <a href="#"><i class="fa fa-instagram"></i></a>
+                                         <a href="#"><i class="fa fa-google-plus"></i></a>
+                                         <a href="#"><i class="fa fa-linkedin"></i></a>
+                                      </div>
+                                   </div><!-- ts-speaker-popup-content end-->
+                                </div><!-- col end-->
+                             </div>
+              <!-- End faq section --><!-- row end-->
+           </div>
+           <!-- popup end-->';
         return $content;
     }
 
-    // To view all Venue
-    public static function viewAllVenue(){
-        $content = ' <div id="popup_venue" class="container ts-speaker-popup mfp-hide">
-   
-      <div id="page-banner-area" class="page-banner-area" style="background-image:url(./images/hero_area/banner_bg.jpg)">
-         <!-- Subpage title start -->
-         <div class="page-banner-title">
-            <div class="text-center">
-               <h2>Event Venue</h2>
-               <ol class="breadcrumb">
-                  <li>
-                     <a href="#">2020 International Impact Sourcing Summit</a>
-                  </li>
-                  <li>
-                        Venue
-                  </li>
-               </ol>
-            </div>
-         </div><!-- Subpage title end -->
-      </div><!-- Page Banner end -->
-
-      <!-- ts intro start -->
-      <section class="ts-intro-content">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6">
-						<h2 class="column-title">
-								<span>COnference Hall</span>
-								Brighton Waterfront Hotel,
-								Brighton, London
-							</h2>
-                  <div class="intro-content-text">
-                     <p>
-									World is committed to making participation in the event a harassment free experience for everyone, regardless of level of experience, gender, gender identity and expression
-							</p>
-							<a href="#">www.brightonwaterfront.com</a>
-                  </div><!-- single intro text end-->
-               </div><!-- col end-->
-               <div class="col-lg-6">
-                  <div class="intro-content-img">
-                        <img src="images/venue/event-hall.jpg" alt="">
-                  </div>
-               </div><!-- col end-->
-            </div><!-- row end-->
-         </div><!-- container end-->
-      </section>
-      <!-- ts intro end-->
-
-      <section class="ts-venue section-bg">
-         <div class="container">
-				<div class="row">
-						<div class="col-lg-12">
-							<h2 class="section-title">
-								<span>Hall View</span>
-								Leacture Halls
-							</h2>
-						</div><!-- col end-->
-					</div>
-            <div class="row">
-               <div class="col-lg-3 col-md-6">
-                  <div class="venue-img">
-				<a href="images/venue/venue-1.jpg" class="ts-popup"><img src="images/venue/venue-1.jpg" alt="" /></a>
-                  </div>
-               </div><!-- Col end -->
-               <div class="col-lg-3 col-md-6">
-                  <div class="venue-img">
-				<a href="images/venue/venue-2.jpg" class="ts-popup"><img src="images/venue/venue-2.jpg" alt="" /></a>
-                  </div>
-               </div><!-- Col end -->
-               <div class="col-lg-3 col-md-6">
-                  <div class="venue-img">
-				<a href="images/venue/venue-3.jpg" class="ts-popup"><img src="images/venue/venue-3.jpg" alt="" /></a>
-                  </div>
-               </div><!-- Col end -->
-               <div class="col-lg-3 col-md-6">
-                  <div class="venue-img">
-				<a href="images/venue/venue-4.jpg" class="ts-popup"><img src="images/venue/venue-4.jpg" alt="" /></a>
-                  </div>
-               </div><!-- Col end -->
-
-            </div>
-         </div>
-      </section>
-      <!-- Venue end -->
-
-      <section class="ts-venue-feature gradient">
-         <div class="container">
-				<div class="row">
-						<div class="col-lg-12">
-							<h2 class="section-title white">
-								<span>Stay Info</span>
-								Others Facilities
-							</h2>
-						</div><!-- col end-->
-					</div>
-            <div class="row">
-               <div class="col-lg-4">
-						<div class="single-venue-content text-center">
-								<i class="icon-cycle"></i>
-								<h3 class="ts-venue-title">Transportation</h3>
-								<p>
-									How  you transform your business as technology, consumer, habits industry dynamic
-								</p>
-								<a href="#" class="btn-link-box">Read More</a>
-							</div>
-               </div><!-- Col end -->
-               <div class="col-lg-4">
-						<div class="single-venue-content text-center">
-								<i class="icon-hotel"></i>
-								<h3 class="ts-venue-title">Accommodation</h3>
-								<p>
-									How  you transform your business as technology, consumer, habits industry dynamic
-								</p>
-								<a href="#" class="btn-link-box">Read More</a>
-							</div>
-               </div><!-- Col end -->
-               <div class="col-lg-4">
-						<div class="single-venue-content text-center">
-								<i class="icon-food"></i>
-								<h3 class="ts-venue-title">Healthy Food</h3>
-								<p>
-									How  you transform your business as technology, consumer, habits industry dynamic
-								</p>
-								<a href="#" class="btn-link-box">Read More</a>
-							</div>
-               </div><!-- Col end -->
-
-            </div>
-         </div>
-      </section>
-      <!--- Venue Feature --->
-   <!-- row end-->
-</div><!-- popup end-->';
+    // To view the Venue
+    public static function viewVenue(){
+        $content = ' <!-- popup start-->
+             <div id="popup_venue" class="container ts-speaker-popup mfp-hide">
+               
+                  <div id="page-banner-area" class="page-banner-area" style="background-image:url('.ROOT.'/includes/images/hero_area/banner_bg.jpg)">
+                     <!-- Subpage title start -->
+                     <div class="page-banner-title">
+                        <div class="text-center">
+                           <h2>Event Venue</h2>
+                           <ol class="breadcrumb">
+                              <li>
+                                 <a href="#">Exhibit /</a>
+                              </li>
+                              <li>
+                                    Venue
+                              </li>
+                           </ol>
+                        </div>
+                     </div><!-- Subpage title end -->
+                  </div><!-- Page Banner end -->
+            
+                  <!-- ts intro start -->
+                  <section class="ts-intro-content">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-lg-6">
+                              <h2 class="column-title">
+                                    <span>COnference Hall</span>
+                                    Brighton Waterfront Hotel,
+                                    Brighton, London
+                                 </h2>
+                              <div class="intro-content-text">
+                                 <p>
+                                       World is committed to making participation in the event a harassment free experience for everyone, regardless of level of experience, gender, gender identity and expression
+                                 </p>
+                                 <a href="#">www.brightonwaterfront.com</a>
+                              </div><!-- single intro text end-->
+                           </div><!-- col end-->
+                           <div class="col-lg-6">
+                              <div class="intro-content-img">
+                                    <img src="'.ROOT.'/includes/images/venue/event-hall.jpg" alt="">
+                              </div>
+                           </div><!-- col end-->
+                        </div><!-- row end-->
+                     </div><!-- container end-->
+                  </section>
+                  <!-- ts intro end-->
+            
+                  <section class="ts-venue section-bg">
+                     <div class="container">
+                        <div class="row">
+                              <div class="col-lg-12">
+                                 <h2 class="section-title">
+                                    <span>Hall View</span>
+                                    Leacture Halls
+                                 </h2>
+                              </div><!-- col end-->
+                           </div>
+                        <div class="row">
+                           <div class="col-lg-3 col-md-6">
+                              <div class="venue-img">
+                        <a href="'.ROOT.'/includes/images/venue/venue-1.jpg" class="ts-popup"><img src="'.ROOT.'/includes/images/venue/venue-1.jpg" alt="" /></a>
+                              </div>
+                           </div><!-- Col end -->
+                           <div class="col-lg-3 col-md-6">
+                              <div class="venue-img">
+                        <a href="'.ROOT.'/includes/images/venue/venue-2.jpg" class="ts-popup"><img src="'.ROOT.'/includes/images/venue/venue-2.jpg" alt="" /></a>
+                              </div>
+                           </div><!-- Col end -->
+                           <div class="col-lg-3 col-md-6">
+                              <div class="venue-img">
+                        <a href="'.ROOT.'/includes/images/venue/venue-3.jpg" class="ts-popup"><img src="'.ROOT.'/includes/images/venue/venue-3.jpg" alt="" /></a>
+                              </div>
+                           </div><!-- Col end -->
+                           <div class="col-lg-3 col-md-6">
+                              <div class="venue-img">
+                        <a href="'.ROOT.'/includes/images/venue/venue-4.jpg" class="ts-popup"><img src="'.ROOT.'/includes/images/venue/venue-4.jpg" alt="" /></a>
+                              </div>
+                           </div><!-- Col end -->
+            
+                        </div>
+                     </div>
+                  </section>
+                  <!-- Venue end -->
+            
+                  <section class="ts-venue-feature gradient">
+                     <div class="container">
+                        <div class="row">
+                              <div class="col-lg-12">
+                                 <h2 class="section-title white">
+                                    <span>Stay Info</span>
+                                    Others Facilities
+                                 </h2>
+                              </div><!-- col end-->
+                           </div>
+                        <div class="row">
+                           <div class="col-lg-4">
+                              <div class="single-venue-content text-center">
+                                    <i class="icon-cycle"></i>
+                                    <h3 class="ts-venue-title">Transportation</h3>
+                                    <p>
+                                       How  you transform your business as technology, consumer, habits industry dynamic
+                                    </p>
+                                    <a href="#" class="btn-link-box">Read More</a>
+                                 </div>
+                           </div><!-- Col end -->
+                           <div class="col-lg-4">
+                              <div class="single-venue-content text-center">
+                                    <i class="icon-hotel"></i>
+                                    <h3 class="ts-venue-title">Accommodation</h3>
+                                    <p>
+                                       How  you transform your business as technology, consumer, habits industry dynamic
+                                    </p>
+                                    <a href="#" class="btn-link-box">Read More</a>
+                                 </div>
+                           </div><!-- Col end -->
+                           <div class="col-lg-4">
+                              <div class="single-venue-content text-center">
+                                    <i class="icon-food"></i>
+                                    <h3 class="ts-venue-title">Healthy Food</h3>
+                                    <p>
+                                       How  you transform your business as technology, consumer, habits industry dynamic
+                                    </p>
+                                    <a href="#" class="btn-link-box">Read More</a>
+                                 </div>
+                           </div><!-- Col end -->
+            
+                        </div>
+                     </div>
+                  </section>
+                  <!--- Venue Feature --->
+               <!-- row end-->
+            </div><!-- popup end-->
+            ';
         return $content;
     }
 }

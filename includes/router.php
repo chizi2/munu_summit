@@ -12,6 +12,7 @@ require_once './includes/init.php';
 require_once('./includes/functions.php');
 
 //load core classes using dynamic links
+// require_once('./includes/classes/dateandtime.php');
 require_once('./includes/classes/database.php');
 require_once('./includes/classes/dashboard.php');
 require_once('./includes/classes/about.php');
@@ -19,5 +20,3 @@ require_once('./includes/classes/others.php');
 require_once('./includes/classes/schedule.php');
 require_once('./includes/classes/faqs.php');
 require_once('./includes/classes/buyticket.php');
-// require_once('./includes/classes/dateandtime.php');
-//require_once('./includes/classes/register.php');
