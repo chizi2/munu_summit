@@ -20,7 +20,7 @@ class database {
 // Constructor
     public function __construct() {
 
-        $this->_connection = new mysqli("localhost", "root", "", 'summit');
+        $this->_connection = new mysqli("127.0.0.1", "root", "", 'summit');
         // Error handling.
         if (mysqli_connect_error()) {
             trigger_error('Failed to connect to the database: ' . mysqli_connect_error(), E_USER_ERROR);
