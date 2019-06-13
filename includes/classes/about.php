@@ -1065,25 +1065,51 @@ class about{
         return $content;
     }
 
+    // To get sponsor offers
+    public static function getOffers($id){
+        $content='';
+        $sql=database::performQuery("SELECT * FROM sponsor_category_has_sponsor_offer WHERE sponsor_category_has_sponsor_offer.sponsor_type_id=(SELECT id FROM sponsor_category WHERE ticket=$id)");
+        while ($data=$sql->fetch_assoc()){
+            $content='';
+        }
+    }
+
     // To get sponsors categories
     public static function sponsorCategory($name)
     {
-            $content='<div class="col-lg-4">
+
+        switch ($name) {
+            case 'silver':
+                $price =   6500;
+                break;
+
+            case 'gold':
+                $price =   12500;
+                break;
+
+            case 'platinum':
+                $price =   15000;
+                break;
+            }
+
+        $content='<div class="col-lg-4">
                         <div class="pricing-item ">
                            <img class="pricing-dot " src="'.ROOT.'/includes/images/pricing/dot.png" alt="">
                            <div class="ts-pricing-box">
       
                               <div class="ts-pricing-header">
+                                 <p class="amount-progres-text">Available tickets for: </p>
                                  <h2 class="ts-pricing-name">'.$name.'</h2>
                                  <h3 class="ts-pricing-price">
-                                    <span class="currency">$</span>219
+                                    <span class="currency">$</span>' .$price .'
                                  </h3>
                               </div>
                               <div class="ts-pricing-progress">
-                                 <p class="amount-progres-text">Available tickets for this price</p>
+                                 <p class="amount-progres-text">And above </p>
                                  <div class="ts-progress">
                                     <div class="ts-progress-inner" style="width: 100%"></div>
                                  </div>
+                                 <p class="amount-progres-text">Available tickets for this price are:</p>
                                  <p class="ts-pricing-value">500/500</p>
                               </div>
                               <div class="promotional-code">
@@ -1113,22 +1139,48 @@ class about{
             $cat= '<option value="3">PLATINUM</option>';
             break;
     }
-        $content = '<!-- popup start-->
-                <div id="popup_sponsor_'.$name.'" class="container ts-speaker-popup mfp-hide">
-                     <div class="col-lg-4 offset-lg-1">
-                        <div class="hero-form-content">
-                           <h2>Register</h2>
-                           <p>Welcome, Register Now To Become A Sponsor For Our Summit:</p>
-                           <form action="?action=sponsor" method="POST" class="hero-form">
-                              <input class="form-control form-control-name" placeholder="Name" name="name" id="name" type="text" required="">
-                              <input class="form-control form-control-phone" placeholder="Phone" name="phone" id="phone" type="number">
-                              <input class="form-control form-control-email" placeholder="Email" name="email" id="email" type="email" required="">
-                              <select name="ticket" id="ticket">'.$cat.'</select>
-                              <button class="btn" type="submit"> Register Now</button>
-                           </form>
-                        </div>
-                     </div>
-                      </div><!-- popup end-->
+        $content = '<div id="popup_sponsor_'.$name.'" class="container ts-speaker-popup mfp-hide">
+                          <div class="row">
+                              <div class="col-lg-6">
+                                <div class="hero-form-content">
+                                   <h2>Register</h2>
+                                      <p>Welcome, Register Now To Become A Sponsor For Our Summit:</p>
+                                      <form action="?action=sponsor" method="POST" class="hero-form">
+                                        <input class="form-control form-control-name" placeholder="Name" name="name" id="name" type="text" required="">
+                                        <input class="form-control form-control-phone" placeholder="Phone" name="phone" id="phone" type="number">
+                                        <input class="form-control form-control-email" placeholder="Email" name="email" id="email" type="email" required="">
+                                        <select name="ticket" id="ticket">'.$cat.'</select>
+                                        <input class="btn" type="button" value="Register Now" onclick="Checkout.showLightbox();" />
+                                      </form>
+                                  </div>
+                                </div><!-- col end-->
+                                
+                              <div class="col-lg-6">
+                                  <div class="hero-form-content">
+                                      <h2>What To Sponsor</h2>
+                                      <p>Welcome, Register Now To Become A Sponsor For Our Summit:</p>
+
+                                      <form action="?action=sponsor" method="POST" class="hero-form" name="listForm">
+                                       
+                                        <input type="checkbox" name="choice" id="choice" value="200" onchange="checkTotal()"> Government Host Partner Sponsorship... $100,000<br>       
+                                        <input type="checkbox" name="choice" id="choice" value="400" onchange="checkTotal()"> Government Host Partner Sponsorship... $100,000 <br>      
+                                        <input type="checkbox" name="choice" id="choice" value="100" onchange="checkTotal()"> Government Host Partner Sponsorship... $100,000<br>       
+                                        <input type="checkbox" name="choice" id="choice" value="500" onchange="checkTotal()"> Government Host Partner Sponsorship... $100,000<br>       
+                                        <input type="checkbox" name="choice" id="choice" value="700" onchange="checkTotal()"> Government Host Partner Sponsorship... $100,000 <br>        
+                                        <input type="checkbox" name="choice" id="choice"value="900" onchange="checkTotal()"> Government Host Partner Sponsorship... $100,000<br>
+                                        <input type="checkbox" name="choice" id="choice" value="1000" onchange="checkTotal()"> Government Host Partner Sponsorship... $10,000<br>
+                                        <input type="checkbox" name="choice" id="choice" value="800" onchange="checkTotal()"> Government Host Partner Sponsorship... $10,000<br><br>
+                                          <div class="form-group">
+                                                    <div id="offer" class="section-title"><span>Amount to be paid </span>0</div>
+                                                    
+                                          </div>   
+                                       <!-- <button type="submit" class="btn-success" onclick="yourTotal()">Check BMI </button> -->
+                                      </form>
+                                  </div>
+                              </div><!-- col end-->
+                          </div><!-- row end-->
+                      </div>
+                
 ';
         return $content;
     }
