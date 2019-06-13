@@ -49,7 +49,9 @@ class dashboard{
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
-    
+  
+      
+ 
 </head>
 
 <body>
@@ -349,7 +351,7 @@ class dashboard{
                         <div class="row">
                      <!-- ==================================== -->
                      ';
-        $ticket=array('early-bird','regular','platinum');
+        $ticket=array('vip-delegate-p/p','vip-and-guest','vip-speaker-w/o-air','vip-panelist-w/o-air','vip-del-w/o-air','day-pass');
         foreach ($ticket as $name){
             echo buyTicket::ticketCategory($name).buyTicket::getTicket($name);
         }
@@ -1219,7 +1221,7 @@ class dashboard{
             ================================================== -->
       <!-- initialize jQuery Library -->
       <script src="'.ROOT.'/includes/js/jquery.js"></script>
-
+      
       <script src="'.ROOT.'/includes/js/popper.min.js"></script>
       <!-- Bootstrap jQuery -->
       <script src="'.ROOT.'/includes/js/bootstrap.min.js"></script>
@@ -1239,6 +1241,70 @@ class dashboard{
 
       <!-- Template custom -->
       <script src="'.ROOT.'/includes/js/main.js"></script>
+      
+<!-- ============================================================== -->
+      <!-- Load Main Payment API script -->
+      <script src="https://orientbank.test.gateway.mastercard.com/checkout/version/40/checkout.js"
+                data-error="errorCallback"
+                data-cancel="cancelCallback"
+                data-complete="'.ROOT.'"
+                >
+        </script>
+
+      <!-- Call Payment API script -->
+        <script type="text/javascript">
+//            function completeCallback(resultIndicator, sessionVersion) {
+//                //handle payment completion
+//            }
+            function cancelCallback() {
+                  console.log(\'Payment cancelled\');
+            }
+            
+            function errorCallback(){
+                let check="Please select number of tickets";
+                alert(check);
+            }
+
+            Checkout.configure({
+                merchant: \'MUNU\',
+                order: {
+                    amount: function() {
+                        //Dynamic calculation of amount
+                        let a = document.getElementById("amount").value;
+                        let b = document.getElementById("ticket").value;
+                        return a * b;
+                    },
+                    currency: \'USD\',
+                    description: \'payed ticket\',
+                    // id: \'<unique_order_id>\'
+                },
+                interaction: {
+                    merchant: {
+                        name: \'Munu Technology Associates LTD\',
+                        address: {
+                            line1: \'200 Sample St\',
+                            line2: \'1234 Example Town\'
+                        }
+                    }
+                }
+            });
+        </script>
+<!-- ============================================================== -->
+
+    <--! Summation function -->
+        <script type="text/javascript">
+        
+            function checkTotal() {
+                var el, i = 0;
+                var total = 0;
+                while(el = document.getElementsByName("choice")[i++]) {
+                    if(el.checked) { total= total + Number(el.value);}
+                }
+                var div = document.getElementById("amount");
+                div.innerHTML = "<span>Amount to be paid : </span>" +total ;
+            }
+        </script>
+<!-- ================================================== -->
 
    </div>
    <!-- Body inner end -->

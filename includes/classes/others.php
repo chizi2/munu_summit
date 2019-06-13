@@ -69,38 +69,7 @@ class others{
                                       <!--img src="'.ROOT.'/includes/images/speakers/speaker1.jpg" alt=""-->
                                   </div>
                               </div><!-- col end-->
-                              <div class="col-lg-6">
-                                  <div class="ts-speaker-popup-content">
-                                      <h3 class="ts-title">Tourism</h3>
-                                      <span class="speakder-designation">Places of attractions in Kampala are:</span>
 
-                                      <p>
-                                      <ul>
-                                          <li>The Bulange and Lubiri. Bulange is the Buganda Kingdom’s parliament and the Lubiri the King Kabaka’s residence</li>
-                                          <li>Kasubi Tombs, which are UNESCO World Heritage</li>
-                                          <li> Lake Victoria, the second largest freshwater lake in the world</li>
-                                          <li>Uganda National Museum, the biggest and oldest museum in Kampala</li>
-                                          <li>Gadhafi Mosque, the national mosque in Uganda</li>
-                                      </ul>
-                                      </p>
-                                      <span class="speakder-designation">Fun facts about Kampala:</span>
-                                      <ul>
-                                          <li>The Bulange and Lubiri. Bulange is the Buganda Kingdom’s parliament and the Lubiri the King Kabaka’s residence</li>
-                                          <li>Kasubi Tombs, which are UNESCO World Heritage</li>
-                                          <li> Lake Victoria, the second largest freshwater lake in the world</li>
-                                          <li>Uganda National Museum, the biggest and oldest museum in Kampala</li>
-                                          <li>Gadhafi Mosque, the national mosque in Uganda</li>
-                                      </ul>
-
-                                      <div class="ts-speakers-social">
-                                          <a href="#"><i class="fa fa-facebook"></i></a>
-                                          <a href="#"><i class="fa fa-twitter"></i></a>
-                                          <a href="#"><i class="fa fa-instagram"></i></a>
-                                          <a href="#"><i class="fa fa-google-plus"></i></a>
-                                          <a href="#"><i class="fa fa-linkedin"></i></a>
-                                      </div>
-                                  </div><!-- ts-speaker-popup-content end-->
-                              </div><!-- col end-->
 
                           </div><!-- row end-->
                       </div><!-- popup end-->';
