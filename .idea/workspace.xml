@@ -5,61 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d58e1abf-40df-4b9e-afa5-ad74ad13a36a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/cf963781-6f7a-4309-886c-d0815791c4dd.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/munu_summit.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/buyticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/buyticket.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/contact-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/contact-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/faqs.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/faqs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/others.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/others.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/schedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/schedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/css/animate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/shuvo.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/css/shuvo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/fonts/iconfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/fonts/iconfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/logos/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/images/logos/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/sponsors/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/images/sponsors/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/culture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/culture2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/food(2).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/food2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/foood.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/images (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/images (2).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/images (3).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/images (4).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/images(1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/images.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/images/tourism/rakaraka.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/isotope.pkgd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/jquery.appear.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/jquery.jCounter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/jquery.magnific-popup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/smoothscroll.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/js/wow.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sass/base.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sass/disable.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sass/mixin.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sass/prepros-6.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sass/responsive.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sass/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/sass/variable.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/includes/classes/schedule.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
-              <caret line="445" lean-forward="true" selection-end-line="445" />
+              <caret line="445" lean-forward="true" selection-start-line="445" selection-end-line="445" />
               <folding>
                 <element signature="n#fullSchedule#0;n#schedule#0;n#!!top" />
               </folding>
@@ -270,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="1383" />
     <option name="height" value="873" />
@@ -347,12 +293,12 @@
       <workItem from="1559898132007" duration="19369000" />
       <workItem from="1559973450503" duration="32565000" />
       <workItem from="1560328306695" duration="23918000" />
-      <workItem from="1560424212068" duration="3041000" />
+      <workItem from="1560424212068" duration="5165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88883000" />
+    <option name="totallyTimeSpent" value="91007000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -364,10 +310,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1383" height="873" extended-state="7" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1383" height="873" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17202693" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17202693" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -381,7 +326,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3285968" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3285968" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3283582" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3283582" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3285968" />
       <window_info anchor="bottom" id="SQL Generator" order="14" weight="0.3285968" />
@@ -599,7 +544,7 @@
     <entry file="file://$PROJECT_DIR$/includes/classes/schedule.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="445" lean-forward="true" selection-end-line="445" />
+          <caret line="445" lean-forward="true" selection-start-line="445" selection-end-line="445" />
           <folding>
             <element signature="n#fullSchedule#0;n#schedule#0;n#!!top" />
           </folding>
